@@ -5,7 +5,6 @@ import { ReportsComponent } from './components/reports/reports.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-  // {path: '', redirectTo: 'table', pathMatch: 'full'},
   {path: '', component: HomeComponent},
   {path: 'table', component: ReportsComponent},
   {path: 'charts', component: ChartsComponent}

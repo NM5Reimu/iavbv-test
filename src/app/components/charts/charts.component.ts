@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import { ReportsService } from 'src/app/services';
-import { ReportsResponce, Report, ChartData, Dataset } from '../../models';
+import { ReportsResponce, Report } from '../../models';
 
 @Component({
   selector: 'app-charts',
@@ -53,9 +53,8 @@ export class ChartsComponent implements OnInit {
   }
 
   buildChartByMultipleDates(): void {
-    //* обнуляем лейблы в датасете
-    this.chartData.labels = [];
-    this.chartData.datasets[0].data = [];
+    //* сбрасываем данные для графика
+    this.chartData = {...this.chartData, labels: [], datasets: [{ label: 'Reports', backgroundColor: '#42A5F5', borderColor: '#1E88E5', data: [] }]}
 
     //* формируем лейблы из выбранных дат используя пайп
     if(this.selectedMultipleDates) this.selectedMultipleDates.map((date: Date) => this.chartData.labels = [...this.chartData.labels, this.datePipe.transform(date, 'MM/dd/yyyy')]);
