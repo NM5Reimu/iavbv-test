@@ -1,0 +1,25 @@
+<h1>График</h1>
+
+<h3>По выбранным датам</h3>
+
+<div class="chart-controls-wrapper">
+  <p-calendar [(ngModel)]="selectedMultipleDates" selectionMode="multiple" [readonlyInput]="true" inputId="multiple" placeholder="Choose dates..." ></p-calendar>
+  <p-button label="Построить график" (onClick)="buildChartByMultipleDates()"></p-button>
+  <p-button label="Очистить график" (onClick)="clearChart()"></p-button>
+</div>
+
+<h3>По диапазону дат</h3>
+
+<div class="chart-controls-wrapper">
+  <p-calendar [(ngModel)]="selectedRangeDates" selectionMode="range" [readonlyInput]="true" inputId="range" placeholder="Choose range dates..."></p-calendar>
+  <p-button label="Построить график" (onClick)="buildChartByRangeDates(selectedRangeDates)"></p-button>
+  <p-button label="Построить полный график" (onClick)="buildChartByAllRangeDates(selectedRangeDates)"></p-button>
+  <p-button label="Очистить график" (onClick)="clearChart()"></p-button>
+</div>
+
+
+
+
+<p-chart *ngIf="isShowChartBar" type="bar" [data]="chartData"></p-chart>
+
+

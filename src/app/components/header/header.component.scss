@@ -1,0 +1,27 @@
+:host {
+  display: flex;
+  align-items: center;
+  color: rgb(247, 247, 247);
+  background-color: rgb(49, 49, 49);
+  height: 55px;
+  width: 100%;
+  border-radius: 0px 0px 7px 7px;
+  padding: 0px 15px;
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 300px;
+  }
+  
+  a {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(247, 247, 247);
+
+    &:hover {
+      color: rgb(204, 204, 204);;
+    }
+  }
+}
